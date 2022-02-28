@@ -82,7 +82,7 @@ ul {
 }
 
 .sidebar {
-    min-width: 330px;
+    width: 330px;
     display: flex;
     flex-direction: column;
     border-right: 1px solid #313E45;
@@ -247,17 +247,34 @@ button {
 }
 
 .contact {
+    width: 100%;
     min-height: 80px;
     display: flex;
     align-items: center;
-    padding: 0 10px;
     border-bottom: 1px solid #222E34;
     cursor: pointer;
+    color: #E9EDEF;
+}
+
+.contact:hover {
+    background: #2A3A42;
+}
+
+.contact h3 {
+    padding: 6px 0;
+}
+
+.contact p {
+    font-weight: 300;
+    color: #8697A0;
 }
 
 .img-wrapper {
+    flex-shrink: 0;
     width: 60px;
     height: 60px;
+    margin-left: 12px;
+    margin-right: 18px;
     overflow: hidden;
     border-radius: 50%;
 }

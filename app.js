@@ -14,6 +14,7 @@ const app = new Vue ({
             {
                 name: 'Michele',
                 avatar: 'img/01.jpg',
+                preview: 'Stasera andiamo al sushi? 😁 🍣',
                 visible: true,
                 messages: [
                     {
@@ -36,6 +37,7 @@ const app = new Vue ({
             {
                 name: 'Fabio',
                 avatar: 'img/02.jpg',
+                preview: `L'hai visto Peaky Blinders 6??`,
                 visible: true,
                 messages: [
                     {
@@ -58,6 +60,7 @@ const app = new Vue ({
             {
                 name: 'Samuele',
                 avatar: 'img/03.jpg',
+                preview: 'Va bene, ci vediamo più tardi dalla nonna. Non ti dimenticare il pane!',
                 visible: true,
                 messages: [
                     {
@@ -80,6 +83,7 @@ const app = new Vue ({
             {
                 name: 'Luisa',
                 avatar: 'img/04.jpg',
+                preview: 'Oggi non posso, sono di nuovo raffreddata.... 🤧',
                 visible: true,
                 messages: [
                     {

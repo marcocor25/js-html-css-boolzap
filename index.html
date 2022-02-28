@@ -15,7 +15,7 @@
 
     <!-- APP ROOT FOR VUEJS -->
     <div id="root">
-
+        <!-- DESKTOP ICON -->
         <div
         @dblclick="openApp"
         class="whatsapp-box">
@@ -24,32 +24,34 @@
             </div>
             <p>WhatsApp Desktop</p>
         </div>
-
+        <!-- APP WINDOW -->
         <div class="app-window"
         :class="[
         {opened: isOpened},
         {closed: isClosed},
         {minimized: isMinimized}, 
         {expanded: isExpanded}]">
-
+            <!-- SIDEBAR -->
             <div class="sidebar">
-
-                <div class="nav">
+                <!-- SIDEBAR NAV -->
+                <div class="sidebar-nav">
+                    <!-- WINDOW BUTTONS -->
                     <div class="window-buttons">
+                        <!-- CLOSE -->
                         <button
                         @click="closeWindow"
                         title="Chiudi la finestra"
                         id="close">
                             <i class="fa-solid fa-x"></i>
                         </button>
-
+                        <!-- MINIMIZE -->
                         <button
                         @click="minimizeWindow"
                         title="Minimizza la finestra"
                         id="minimize">
                             <i class="fa-solid fa-window-minimize"></i>
                         </button>
-
+                        <!-- EXPAND -->
                         <button
                         @click="expandWindow"
                         title="Espandi la finestra"
@@ -57,6 +59,7 @@
                             <i class="fa-solid fa-up-right-and-down-left-from-center"></i>
                         </button>
                     </div>
+                    <!-- PROFILE TOOLS -->
                     <div class="profile-tools">
                         <div title="Visualizza profilo" class="avatar">
                             <img src="img/avatar.jpeg">
@@ -64,7 +67,7 @@
                         <i title="Aggiornamento stati" class="fa-solid fa-circle-notch"></i>
                         <i title="Nuovo messaggio" class="fa-solid fa-pen-to-square"></i>
                         <i title="Mostra altre opzioni" @click="menuToggler" class="fa-solid fa-chevron-down"></i>
-
+                        <!-- DROPDOWN MENU -->
                         <div class="list-wrapper" :class="{active: isActive}">
                             <ul>
                                 <li>Nuovo messaggio</li>
@@ -76,20 +79,43 @@
                         </div>
                     </div>
                 </div>
-
+                <!-- SEARCH-BAR -->
                 <div class="search-bar">
                     <input type="search" class="input-search" placeholder="&#xf002; Cerca o inizia una nuova chat">
                 </div>
-
+                <!-- CONTACT WRAPPER -->
+                <div class="contact-wrapper">
+                    <!-- CONTACT -->
+                    <div
+                    v-for="element in contacts"
+                    class="contact">
+                        <div class="img-wrapper">
+                            <img :src="element.avatar" :alt="element.name">
+                        </div>
+                        
+                    </div>
+                </div>
             </div>
+            <!-- MAIN SECTION -->
             <div class="main">
+                <!-- MAIN NAV -->
+                <div class="main-nav">
 
+                </div>
+                <!-- CHAT SECTION -->
+                <div class="chat-section">
+
+                </div>
+                <!-- MAIN TOOLBAR -->
+                <div class="main-toolbar">
+
+                </div>
             </div>
         </div>
     </div>
 
     <!-- SCRIPT -->
-    <script src="/app.js"></script>
+    <script src="app.js"></script>
 
 </body>
 </html>

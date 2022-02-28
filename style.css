@@ -1,3 +1,4 @@
+/* PRESET CSS */
 * {
     margin: 0;
     padding: 0;
@@ -7,17 +8,24 @@
 html {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 14px;
-    user-select: none;
+    -webkit-user-select: none;
 }
 
 img {
     width: 100%;
     height: 100%;
+    -webkit-user-drag: none;
 }
 
 ul {
     list-style: none;
 }
+
+/* SCROLL-BAR STYLE */
+::-webkit-scrollbar {width: 8px;}
+::-webkit-scrollbar-thumb {border-radius: 5px; background: #384045;}
+
+/* **************************************************************************************************** */
 
 #root {
     height: 100vh;
@@ -75,6 +83,8 @@ ul {
 
 .sidebar {
     min-width: 330px;
+    display: flex;
+    flex-direction: column;
     border-right: 1px solid #313E45;
     background: #111C22;
 }
@@ -83,7 +93,7 @@ ul {
     flex-grow: 1;
 }
 
-.nav {
+.sidebar-nav {
     min-height: 60px;
     display: flex;
     justify-content: space-between;
@@ -229,4 +239,49 @@ button {
 
 .input-search:focus-visible {
     outline: none;
+}
+
+.contact-wrapper {
+    flex-grow: 1;
+    overflow: auto;
+}
+
+.contact {
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    border-bottom: 1px solid #222E34;
+    cursor: pointer;
+}
+
+.img-wrapper {
+    width: 60px;
+    height: 60px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+}
+
+.main-nav {
+    min-height: 60px;
+    display: flex;
+    background: #212D33;
+}
+
+.chat-section {
+    flex-grow: 1;
+    background-image: url(img/chat_background.png);
+    background-size: contain;
+    background-position: center;
+}
+
+.main-toolbar {
+    min-height: 60px;
+    display: flex;
+    background: #212D33;
 }

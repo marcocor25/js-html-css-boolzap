@@ -15,7 +15,23 @@
 
     <!-- APP ROOT FOR VUEJS -->
     <div id="root">
-        
+        <div class="app-window" :class="{active: isActive}">
+            <div class="sidebar">
+                <div class="nav">
+                    <div class="window-buttons">
+                        <button id="close"><i class="fa-solid fa-x"></i></button>
+                        <button id="minimize"><i class="fa-solid fa-window-minimize"></i></button>
+                        <button title="Espandi la finestra" id="expand" @click="expandWindow"><i class="fa-solid fa-up-right-and-down-left-from-center"></i></button>
+                    </div>
+                    <div class="profile-tools">
+
+                    </div>
+                </div>
+            </div>
+            <div class="main">
+
+            </div>
+        </div>
     </div>
 
     <!-- SCRIPT -->

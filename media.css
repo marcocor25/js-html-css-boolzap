@@ -1,0 +1,10 @@
+@media all and (max-width: 860px) {
+    .sidebar {
+        flex-grow: 1;
+        border-right: none;
+    }
+
+    .main {
+        display: none;
+    }
+}

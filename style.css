@@ -122,6 +122,9 @@ button {
     cursor: pointer;
     font-size: 18px;
     color: #AEBAC1;
+}
+
+.profile-tools i {
     transition: 200ms linear;
 }
 
@@ -130,7 +133,7 @@ button {
 }
 
 .fa-chevron-down {
-    font-size: 14px;
+    font-size: 13px;
 }
 
 .avatar {

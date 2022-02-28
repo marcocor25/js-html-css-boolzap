@@ -47,12 +47,22 @@
                     </div>
 
                     <div class="profile-tools">
-                        <div class="avatar">
+                        <div title="Visualizza profilo" class="avatar">
                             <img src="img/avatar.jpeg">
                         </div>
-                        <i class="fa-solid fa-circle-notch"></i>
-                        <i class="fa-solid fa-pen-to-square"></i>
-                        <i class="fa-solid fa-chevron-down"></i>
+                        <i title="Aggiornamento stati" class="fa-solid fa-circle-notch"></i>
+                        <i title="Nuovo messaggio" class="fa-solid fa-pen-to-square"></i>
+                        <i title="Mostra altre opzioni" @click="menuToggler" class="fa-solid fa-chevron-down"></i>
+
+                        <div class="list-wrapper" :class="{active: isActive}">
+                            <ul>
+                                <li>Nuovo messaggio</li>
+                                <li>Archiviate</li>
+                                <li>Messaggi importanti</li>
+                                <li>Impostazioni</li>
+                                <li>Disconnetti</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -15,6 +15,10 @@ img {
     height: 100%;
 }
 
+ul {
+    list-style: none;
+}
+
 #root {
     height: 100vh;
     display: flex;
@@ -106,7 +110,7 @@ button {
     position: absolute;
     bottom: 20px;
     right: 20px;
-    width: 20vw;
+    width: 26vw;
     height: 40vh;
 }
 
@@ -122,6 +126,7 @@ button {
     cursor: pointer;
     font-size: 18px;
     color: #AEBAC1;
+    position: relative;
 }
 
 .profile-tools i {
@@ -143,4 +148,27 @@ button {
     height: 42px;
     border-radius: 50%;
     overflow: hidden;
+}
+
+.list-wrapper {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 120px;
+    width: 180px;
+    font-size: 15px;
+    background: #233238;
+}
+
+.list-wrapper li {
+    line-height: 40px;
+    padding: 0 20px;
+}
+
+.list-wrapper li:hover {
+    background: #182329;
+}
+
+.active {
+    display: block;
 }

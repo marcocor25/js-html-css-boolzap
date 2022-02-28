@@ -8,6 +8,7 @@ const app = new Vue ({
         isDisabled: false,
         isMinimized: false,
         isExpanded: false,
+        isActive: false,
     },
     methods: {
 
@@ -21,6 +22,10 @@ const app = new Vue ({
 
         expandWindow: function() {
             this.isExpanded = !this.isExpanded;
+        },
+
+        menuToggler: function() {
+            this.isActive = !this.isActive;
         },
 
     },

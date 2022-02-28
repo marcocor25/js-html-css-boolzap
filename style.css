@@ -39,7 +39,7 @@ img {
 }
 
 .sidebar {
-    min-width: 300px;
+    min-width: 330px;
     border-right: 1px solid #313E45;
     background: #111C22;
 }
@@ -117,19 +117,21 @@ button {
 .profile-tools {
     display: flex;
     align-items: center;
-    gap: 25px;
-    padding: 0 20px;
+    gap: 10px;
+    padding: 0 10px;
     cursor: pointer;
     font-size: 18px;
     color: #AEBAC1;
 }
 
 .profile-tools i {
+    padding: 12px;
+    border-radius: 50%;
     transition: 200ms linear;
 }
 
 .profile-tools i:hover {
-    color: #09D361;
+    background: #374348;
 }
 
 .fa-chevron-down {
@@ -137,8 +139,8 @@ button {
 }
 
 .avatar {
-    width: 40px;
-    height: 40px;
+    width: 42px;
+    height: 42px;
     border-radius: 50%;
     overflow: hidden;
 }

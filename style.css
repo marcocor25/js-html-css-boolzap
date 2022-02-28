@@ -83,5 +83,8 @@ button {
 .active {
     width: 100vw;
     height: 100vh;
-    transition: 200ms linear;
+}
+
+.close {
+    display: none;
 }

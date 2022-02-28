@@ -15,13 +15,31 @@
 
     <!-- APP ROOT FOR VUEJS -->
     <div id="root">
-        <div class="app-window" :class="[{active: isActive}, {close: isDisabled}]">
+        <div class="app-window"
+        :class="[{active: isActive}, {closed: isDisabled}, {minimized: isMinimized}]">
             <div class="sidebar">
                 <div class="nav">
                     <div class="window-buttons">
-                        <button @click="closeWindow" id="close"><i class="fa-solid fa-x"></i></button>
-                        <button id="minimize"><i class="fa-solid fa-window-minimize"></i></button>
-                        <button title="Espandi la finestra" id="expand" @click="expandWindow"><i class="fa-solid fa-up-right-and-down-left-from-center"></i></button>
+                        <button
+                        @click="closeWindow"
+                        title="Chiudi la finestra"
+                        id="close">
+                            <i class="fa-solid fa-x"></i>
+                        </button>
+
+                        <button
+                        @click="minimizeWindow"
+                        title="Minimizza la finestra"
+                        id="minimize">
+                            <i class="fa-solid fa-window-minimize"></i>
+                        </button>
+
+                        <button
+                        @click="expandWindow"
+                        title="Espandi la finestra"
+                        id="expand">
+                            <i class="fa-solid fa-up-right-and-down-left-from-center"></i>
+                        </button>
                     </div>
                     <div class="profile-tools">
 

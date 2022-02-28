@@ -27,7 +27,7 @@ img {
 }
 
 .app-window {
-    width: 70vw;
+    width: 75vw;
     height: 90vh;
     display: flex;
     border-radius: 8px;
@@ -39,7 +39,7 @@ img {
 }
 
 .sidebar {
-    flex-grow: 0.4;
+    min-width: 300px;
     border-right: 1px solid #313E45;
     background: #111C22;
 }
@@ -49,8 +49,9 @@ img {
 }
 
 .nav {
-    display: flex;
     min-height: 60px;
+    display: flex;
+    justify-content: space-between;
     background: #212D33;
 }
 
@@ -58,7 +59,7 @@ img {
     display: flex;
     align-items: center;
     gap: 7px;
-    padding: 0 20px;
+    padding: 0 12px;
 }
 
 button {
@@ -96,7 +97,7 @@ button {
     background: #27C840;
 }
 
-.active {
+.expanded {
     width: 100vw;
     height: 100vh;
 }
@@ -111,4 +112,30 @@ button {
 
 .closed {
     display: none;
+}
+
+.profile-tools {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    padding: 0 20px;
+    cursor: pointer;
+    font-size: 18px;
+    color: #AEBAC1;
+    transition: 200ms linear;
+}
+
+.profile-tools i:hover {
+    color: #09D361;
+}
+
+.fa-chevron-down {
+    font-size: 14px;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
 }

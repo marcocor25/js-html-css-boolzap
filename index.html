@@ -16,7 +16,11 @@
     <!-- APP ROOT FOR VUEJS -->
     <div id="root">
         <div class="app-window"
-        :class="[{active: isActive}, {closed: isDisabled}, {minimized: isMinimized}]">
+        :class="[
+        {closed: isDisabled},
+        {minimized: isMinimized}, 
+        {expanded: isExpanded}]">
+
             <div class="sidebar">
                 <div class="nav">
                     <div class="window-buttons">
@@ -41,8 +45,14 @@
                             <i class="fa-solid fa-up-right-and-down-left-from-center"></i>
                         </button>
                     </div>
-                    <div class="profile-tools">
 
+                    <div class="profile-tools">
+                        <div class="avatar">
+                            <img src="img/avatar.jpeg">
+                        </div>
+                        <i class="fa-solid fa-circle-notch"></i>
+                        <i class="fa-solid fa-pen-to-square"></i>
+                        <i class="fa-solid fa-chevron-down"></i>
                     </div>
                 </div>
             </div>

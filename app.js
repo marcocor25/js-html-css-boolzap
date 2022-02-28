@@ -7,7 +7,7 @@ const app = new Vue ({
     data: {
         isDisabled: false,
         isMinimized: false,
-        isActive: false,
+        isExpanded: false,
     },
     methods: {
 
@@ -20,7 +20,7 @@ const app = new Vue ({
         },
 
         expandWindow: function() {
-            this.isActive = !this.isActive;
+            this.isExpanded = !this.isExpanded;
         },
 
     },

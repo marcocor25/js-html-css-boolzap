@@ -15,9 +15,20 @@
 
     <!-- APP ROOT FOR VUEJS -->
     <div id="root">
+
+        <div
+        @dblclick="openApp"
+        class="whatsapp-box">
+            <div class="w-icon">
+                <img src="img/icon.png" alt="">
+            </div>
+            <p>WhatsApp Desktop</p>
+        </div>
+
         <div class="app-window"
         :class="[
-        {closed: isDisabled},
+        {opened: isOpened},
+        {closed: isClosed},
         {minimized: isMinimized}, 
         {expanded: isExpanded}]">
 

@@ -5,15 +5,16 @@ console.log('Welcome to the new version of WhatsApp Web!');
 const app = new Vue ({
     el: '#root',
     data: {
-        isDisabled: false,
+        isClosed: false,
         isMinimized: false,
         isExpanded: false,
         isActive: false,
+        isOpened: false,
     },
     methods: {
 
         closeWindow: function() {
-            this.isDisabled = !this.isDisabled;
+            this.isClosed = true;
         },
 
         minimizeWindow: function() {
@@ -28,6 +29,9 @@ const app = new Vue ({
             this.isActive = !this.isActive;
         },
 
+        openApp: function() {
+            this.isClosed = false;
+        },
     },
 });
 

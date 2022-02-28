@@ -28,6 +28,36 @@ ul {
     background-position: center;
     background-size: cover;
     position: relative;
+    overflow: hidden;
+}
+
+.whatsapp-box {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 5px;
+    padding: 5px 0;
+    z-index: 0;
+    cursor: pointer;
+}
+
+.whatsapp-box p {
+    text-align: center;
+    font-size: 12px;
+    color: white;
+}
+
+.whatsapp-box:hover {
+    background: #ffffff4d;
+}
+
+.w-icon {
+    width: 50px;
+    padding: 2px 0;
 }
 
 .app-window {
@@ -40,6 +70,7 @@ ul {
     box-shadow: 1px 1px 10px black;
     background: #202D33;
     transition: 200ms linear;
+    z-index: 1;
 }
 
 .sidebar {
@@ -101,23 +132,6 @@ button {
     background: #27C840;
 }
 
-.expanded {
-    width: 100vw;
-    height: 100vh;
-}
-
-.minimized {
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-    width: 26vw;
-    height: 40vh;
-}
-
-.closed {
-    display: none;
-}
-
 .profile-tools {
     display: flex;
     align-items: center;
@@ -169,6 +183,26 @@ button {
     background: #182329;
 }
 
+.closed {
+    visibility: hidden;
+}
+
+.minimized {
+    position: absolute;
+    bottom: -120px;
+    right: -220px;
+    transform: scale(0.5);
+}
+
+.expanded {
+    width: 100vw;
+    height: 100vh;
+}
+
 .active {
     display: block;
+}
+
+.opened {
+    visibility: visible;
 }

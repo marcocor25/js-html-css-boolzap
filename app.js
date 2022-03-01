@@ -10,9 +10,11 @@ const app = new Vue ({
         isExpanded: false,
         isActive: false,
         isOpened: false,
+        chat: '',
         contacts: [
             {
                 name: 'Michele',
+                accesso: 'online',
                 avatar: 'img/01.jpg',
                 preview: 'Stasera andiamo al sushi? 😁🍣',
                 visible: true,
@@ -36,6 +38,7 @@ const app = new Vue ({
             },
             {
                 name: 'Fabio',
+                accesso: 'oggi alle  16:47',
                 avatar: 'img/02.jpg',
                 preview: `L'hai visto Peaky Blinders 6??`,
                 visible: true,
@@ -59,6 +62,7 @@ const app = new Vue ({
             },
             {
                 name: 'Samuele',
+                accesso: 'ieri alle 23:38',
                 avatar: 'img/03.jpg',
                 preview: 'Va bene, ci vediamo più tardi dalla nonna. Non ti dimenticare il pane!',
                 visible: true,
@@ -82,6 +86,7 @@ const app = new Vue ({
             },
             {
                 name: 'Luisa',
+                accesso: 'online',
                 avatar: 'img/04.jpg',
                 preview: 'Oggi non posso, sono di nuovo raffreddata.... 🤧',
                 visible: true,
@@ -120,6 +125,10 @@ const app = new Vue ({
 
         openApp: function() {
             this.isClosed = false;
+        },
+
+        selectChat: function(i) {
+            this.chat = i;
         },
     },
 });

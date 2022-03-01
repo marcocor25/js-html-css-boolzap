@@ -289,8 +289,12 @@ button {
 }
 
 .main {
-    display: flex;
+    display: none;
     flex-direction: column;
+}
+
+.show-chat {
+    display: flex;
 }
 
 .main-nav {

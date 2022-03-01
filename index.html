@@ -87,7 +87,8 @@
                 <div class="contact-wrapper">
                     <!-- CONTACT -->
                     <div
-                    v-for="element in contacts"
+                    @click="selectChat(index)"
+                    v-for="(element, index) in contacts"
                     class="contact">
                         <div class="img-wrapper">
                             <img :src="element.avatar" :alt="element.name">
@@ -100,16 +101,19 @@
                 </div>
             </div>
             <!-- MAIN SECTION -->
-            <div class="main">
+            <div
+            :class="index === chat ? 'show-chat' : '' "
+            v-for="(element, index) in contacts"
+            class="main">
                 <!-- MAIN NAV -->
                 <div class="main-nav">
                     <div class="main-nav-profile">
                         <div class="main-profile-image">
-                            <img src="img/01.jpg" alt="">
+                            <img :src="element.avatar" alt="element.name">
                         </div>
                         <div class="main-profile-info">
-                            <h3>Mimmo</h3>
-                            <p>online</p>
+                            <h3>{{element.name}}</h3>
+                            <p>{{element.accesso}}</p>
                         </div>
                     </div>
                     <div class="main-nav-tools">
@@ -124,11 +128,9 @@
                 <div class="chat-section">
                     <div class="message received">
                         <div class="triangle-received"></div>
-                        Prova
                     </div>
                     <div class="message sent">
                         <div class="triangle-sent"></div>
-                        Test
                     </div>
                 </div>
                 <!-- MAIN TOOLBAR -->

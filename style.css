@@ -115,6 +115,7 @@ button {
     border-radius: 50%;
     font-weight: 900;
     font-size: 6px;
+    cursor: pointer;
     color: #000000cc;
 }
 
@@ -293,9 +294,32 @@ button {
 
 .chat-section {
     flex-grow: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow: auto;
     background-image: url(img/chat_background.png);
     background-size: contain;
     background-position: center;
+}
+
+.message {
+    min-width: 80px;
+    max-width: 250px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: #E9EDEF;
+}
+
+.received {
+    align-self: flex-start;
+    background: #202D33;
+}
+
+.sent {
+    align-self: flex-end;
+    background: #015D4B;
 }
 
 .main-toolbar {

@@ -95,14 +95,14 @@
                         </div>
                         <div class="info-wrapper">
                             <h3>{{element.name}}</h3>
-                            <p>{{element.preview}}</p>
+                            <p>{{element.messages[element.messages.length - 1].text}}</p>
                         </div>
                     </div>
                 </div>
             </div>
             <!-- MAIN SECTION -->
             <div
-            :class="index === chat ? 'show-chat' : '' "
+            :class="index === chat ? 'main-active' : '' "
             v-for="(element, index) in contacts"
             class="main">
                 <!-- MAIN NAV -->
@@ -125,12 +125,21 @@
                     </div>
                 </div>
                 <!-- CHAT SECTION -->
-                <div class="chat-section">
-                    <div class="message received">
-                        <div class="triangle-received"></div>
-                    </div>
-                    <div class="message sent">
-                        <div class="triangle-sent"></div>
+                <div
+                v-for="(element, index) in contacts"
+                :class="index === chat ? 'chat-active' : ''"
+                class="chat-section">
+                    <!-- MESSAGE -->
+                    <div
+                    v-for="element in element.messages"
+                    :class="element.status == 'sent' ? 'sent' : 'received'"
+                    class="message">
+                        <!-- TEXT -->
+                        {{element.text}}
+                        <!-- TRIANGLE -->
+                        <div
+                        :class="element.status == 'sent' ? 'triangle-sent' : 'triangle-received'">
+                        </div>
                     </div>
                 </div>
                 <!-- MAIN TOOLBAR -->

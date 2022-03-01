@@ -293,9 +293,10 @@ button {
     flex-direction: column;
 }
 
-.show-chat {
+.main-active {
     display: flex;
 }
+
 
 .main-nav {
     min-height: 60px;
@@ -361,14 +362,18 @@ button {
 
 .chat-section {
     flex-grow: 1;
-    padding: 20px;
-    display: flex;
+    display: none;
     flex-direction: column;
     gap: 20px;
+    padding: 20px;
     overflow: auto;
     background-image: url(img/chat_background.png);
     background-size: contain;
     background-position: center;
+}
+
+.chat-active {
+    display: flex;
 }
 
 .message {
@@ -382,14 +387,14 @@ button {
     position: relative;
 }
 
-.received {
-    align-self: flex-start;
-    background: #202D33;
-}
-
 .sent {
     align-self: flex-end;
     background: #015D4B;
+}
+
+.received {
+    align-self: flex-start;
+    background: #202D33;
 }
 
 .triangle-received {

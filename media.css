@@ -1,4 +1,18 @@
-@media all and (max-width: 860px) {
+@media all and (max-width: 1000px) {
+    #pipe {
+        display: none;
+    }
+
+    #search {
+        display: none;
+    }
+
+    #arrow-down {
+        display: none;
+    }
+}
+
+@media all and (max-width: 880px) {
     .sidebar {
         flex-grow: 1;
         border-right: none;

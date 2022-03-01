@@ -88,7 +88,7 @@ ul {
 }
 
 .sidebar {
-    width: 330px;
+    min-width: 320px;
     display: flex;
     flex-direction: column;
     border-right: 1px solid #313E45;
@@ -154,7 +154,6 @@ button {
     align-items: center;
     gap: 10px;
     padding: 0 10px;
-    cursor: pointer;
     font-size: 18px;
     color: #AEBAC1;
     position: relative;
@@ -162,6 +161,7 @@ button {
 
 .profile-tools i {
     padding: 12px;
+    cursor: pointer;
     border-radius: 50%;
     transition: 200ms linear;
 }
@@ -269,8 +269,8 @@ button {
 
 .img-wrapper {
     flex-shrink: 0;
-    width: 60px;
-    height: 60px;
+    width: 55px;
+    height: 55px;
     margin-left: 12px;
     margin-right: 18px;
     overflow: hidden;
@@ -282,6 +282,7 @@ button {
 }
 
 .info-wrapper p {
+    padding-bottom: 6px;
     padding-right: 20px;
     font-weight: 300;
     color: #8697A0;
@@ -296,6 +297,62 @@ button {
     min-height: 60px;
     display: flex;
     background: #212D33;
+}
+
+.main-nav-profile {
+    flex-grow: 1;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+}
+
+.main-profile-image {
+    width: 42px;
+    height: 42px;
+    margin: 0 15px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.main-profile-info {
+    color: #E9EDEF;
+}
+
+.main-profile-info h3 {
+    padding: 2px 0;
+}
+
+.main-profile-info p {
+    font-weight: 300;
+    color: #8697A0;
+}
+
+.main-nav-tools {
+    flex-grow: 0.5;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+    padding: 0 10px;
+    font-size: 18px;
+    color: #AEBAC1;
+}
+
+.main-nav-tools i {
+    padding: 12px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 200ms linear;
+}
+
+.main-nav-tools i:hover {
+    background: #374348;
+}
+
+#pipe {
+    transform: rotate(90deg);
+    cursor: auto;
+    background: none;
 }
 
 .chat-section {

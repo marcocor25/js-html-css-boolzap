@@ -68,7 +68,7 @@
                         <i title="Nuovo messaggio" class="fa-solid fa-pen-to-square"></i>
                         <i title="Mostra altre opzioni" @click="menuToggler" class="fa-solid fa-chevron-down"></i>
                         <!-- DROPDOWN MENU -->
-                        <div class="list-wrapper" :class="{active: isActive}">
+                        <div class="dropdown-menu" :class="{active: isActive}">
                             <ul>
                                 <li>Nuovo messaggio</li>
                                 <li>Archiviate</li>
@@ -92,7 +92,7 @@
                         <div class="img-wrapper">
                             <img :src="element.avatar" :alt="element.name">
                         </div>
-                        <div class="info-contact-wrapper">
+                        <div class="info-wrapper">
                             <h3>{{element.name}}</h3>
                             <p>{{element.preview}}</p>
                         </div>
@@ -107,11 +107,18 @@
                 </div>
                 <!-- CHAT SECTION -->
                 <div class="chat-section">
-
+                    
                 </div>
                 <!-- MAIN TOOLBAR -->
                 <div class="main-toolbar">
-
+                    <div class="emoji-box">
+                        <i class="fa-regular fa-face-smile"></i>
+                        <i class="fas fa-paperclip"></i>
+                    </div>
+                    <input class="chat-input" type="text" placeholder="Scrivi un messaggio">
+                    <div class="vocal-box">
+                        <i class="fa-solid fa-microphone-lines"></i>
+                    </div>
                 </div>
             </div>
         </div>

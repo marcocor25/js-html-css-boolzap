@@ -174,22 +174,22 @@ button {
     overflow: hidden;
 }
 
-.list-wrapper {
+.dropdown-menu {
     display: none;
     position: absolute;
     top: 60px;
-    left: 120px;
+    left: 20px;
     width: 180px;
     font-size: 15px;
     background: #233238;
 }
 
-.list-wrapper li {
+.dropdown-menu li {
     line-height: 40px;
     padding: 0 20px;
 }
 
-.list-wrapper li:hover {
+.dropdown-menu li:hover {
     background: #182329;
 }
 
@@ -260,15 +260,6 @@ button {
     background: #2A3A42;
 }
 
-.contact h3 {
-    padding: 6px 0;
-}
-
-.contact p {
-    font-weight: 300;
-    color: #8697A0;
-}
-
 .img-wrapper {
     flex-shrink: 0;
     width: 60px;
@@ -277,6 +268,16 @@ button {
     margin-right: 18px;
     overflow: hidden;
     border-radius: 50%;
+}
+
+.info-wrapper h3 {
+    padding: 6px 0;
+}
+
+.info-wrapper p {
+    padding-right: 20px;
+    font-weight: 300;
+    color: #8697A0;
 }
 
 .main {
@@ -300,5 +301,34 @@ button {
 .main-toolbar {
     min-height: 60px;
     display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 26px;
+    color: #8697A0;
     background: #212D33;
+}
+
+.main-toolbar i {
+    padding: 0 8px;
+}
+
+.emoji-box, .vocal-box {
+    flex-shrink: 0;
+    padding: 0 15px;
+    cursor: pointer;
+}
+
+.chat-input {
+    flex-grow: 1;
+    min-height: 40px;
+    padding: 0 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #8697A0;
+    background: #2A3A42;
+}   
+
+.chat-input:focus-visible {
+    outline: none;
 }

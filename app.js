@@ -14,7 +14,7 @@ const app = new Vue ({
             {
                 name: 'Michele',
                 avatar: 'img/01.jpg',
-                preview: 'Stasera andiamo al sushi? 😁 🍣',
+                preview: 'Stasera andiamo al sushi? 😁🍣',
                 visible: true,
                 messages: [
                     {

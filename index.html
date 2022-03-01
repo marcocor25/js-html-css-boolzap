@@ -66,9 +66,9 @@
                         </div>
                         <i title="Aggiornamento stati" class="fa-solid fa-circle-notch"></i>
                         <i title="Nuovo messaggio" class="fa-solid fa-pen-to-square"></i>
-                        <i title="Mostra altre opzioni" @click="menuToggler" class="fa-solid fa-chevron-down"></i>
+                        <i title="Mostra altre opzioni" @click="menuToggler1" class="fa-solid fa-chevron-down"></i>
                         <!-- DROPDOWN MENU -->
-                        <div class="dropdown-menu" :class="{active: isActive}">
+                        <div class="dropdown dropdown-sidebar" :class="{active: isActive1}">
                             <ul>
                                 <li>Nuovo messaggio</li>
                                 <li>Archiviate</li>
@@ -102,14 +102,14 @@
             </div>
             <!-- MAIN SECTION -->
             <div
-            :class="index === chat ? 'main-active' : '' "
+            :class="index === chat ? 'main-active' : ''"
             v-for="(element, index) in contacts"
             class="main">
                 <!-- MAIN NAV -->
                 <div class="main-nav">
                     <div class="main-nav-profile">
                         <div class="main-profile-image">
-                            <img :src="element.avatar" alt="element.name">
+                            <img title="Visualizza profilo" :src="element.avatar" alt="element.name">
                         </div>
                         <div class="main-profile-info">
                             <h3>{{element.name}}</h3>
@@ -117,11 +117,21 @@
                         </div>
                     </div>
                     <div class="main-nav-tools">
-                        <i class="fa-solid fa-video"></i>
-                        <i class="fa-solid fa-phone"></i>
+                        <i title="Avvio videochiamata" class="fa-solid fa-video"></i>
+                        <i title="Avvia chiamata vocale" class="fa-solid fa-phone"></i>
                         <i class="fa-solid fa-minus" id="pipe"></i>
-                        <i class="fa-solid fa-magnifying-glass" id="search"></i>
-                        <i class="fa-solid fa-chevron-down" id="arrow-down"></i>
+                        <i title="Cerca nella chat" class="fa-solid fa-magnifying-glass" id="search"></i>
+                        <i title="Mostra altre opzioni" class="fa-solid fa-chevron-down" @click="menuToggler2" id="arrow-down"></i>
+                        <!-- DROPDOWN MENU -->
+                        <div class="dropdown dropdown-main" :class="{active: isActive2}">
+                            <ul>
+                                <li>Info contatto</li>
+                                <li>Seleziona messaggi</li>
+                                <li>Attiva notifichd</li>
+                                <li>Elimina messaggi</li>
+                                <li>Elimina chat</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
                 <!-- CHAT SECTION -->
@@ -145,12 +155,12 @@
                 <!-- MAIN TOOLBAR -->
                 <div class="main-toolbar">
                     <div class="emoji-box">
-                        <i class="fa-regular fa-face-smile"></i>
-                        <i class="fas fa-paperclip"></i>
+                        <i title="Emoji e simboli" class="fa-regular fa-face-smile"></i>
+                        <i title="Allega file" class="fas fa-paperclip"></i>
                     </div>
                     <input class="chat-input" type="text" placeholder="Scrivi un messaggio">
                     <div class="vocal-box">
-                        <i class="fa-solid fa-microphone"></i>
+                        <i title="Registra messaggio vocale" class="fa-solid fa-microphone"></i>
                     </div>
                 </div>
             </div>

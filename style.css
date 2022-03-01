@@ -181,23 +181,37 @@ button {
     overflow: hidden;
 }
 
-.dropdown-menu {
+.dropdown {
     display: none;
-    position: absolute;
-    top: 60px;
-    left: 20px;
     width: 180px;
     font-size: 15px;
+    color: #AEBAC1;
     background: #233238;
 }
 
-.dropdown-menu li {
+.dropdown-sidebar {
+    position: absolute;
+    top: 60px;
+    left: 20px;
+}
+
+.dropdown-main {
+    position: absolute;
+    top: 60px;
+    right: 10px;
+}
+
+.dropdown li {
     line-height: 40px;
     padding: 0 20px;
 }
 
-.dropdown-menu li:hover {
+.dropdown li:hover {
     background: #182329;
+}
+
+.active {
+    display: block;
 }
 
 .closed {
@@ -214,10 +228,6 @@ button {
 .expanded {
     width: 100vw;
     height: 100vh;
-}
-
-.active {
-    display: block;
 }
 
 .opened {
@@ -341,6 +351,8 @@ button {
     padding: 0 10px;
     font-size: 18px;
     color: #AEBAC1;
+    position: relative;
+    z-index: 1;
 }
 
 .main-nav-tools i {

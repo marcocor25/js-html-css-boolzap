@@ -8,7 +8,8 @@ const app = new Vue ({
         isClosed: false,
         isMinimized: false,
         isExpanded: false,
-        isActive: false,
+        isActive1: false,
+        isActive2: false,
         isOpened: false,
         chat: '',
         contacts: [
@@ -119,8 +120,12 @@ const app = new Vue ({
             this.isExpanded = !this.isExpanded;
         },
 
-        menuToggler: function() {
-            this.isActive = !this.isActive;
+        menuToggler1: function() {
+            this.isActive1 = !this.isActive1;
+        },
+
+        menuToggler2: function() {
+            this.isActive2 = !this.isActive2;
         },
 
         openApp: function() {

@@ -303,7 +303,7 @@ button {
     padding: 20px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 20px;
     overflow: auto;
     background-image: url(img/chat_background.png);
     background-size: contain;
@@ -312,7 +312,7 @@ button {
 
 .message {
     min-width: 80px;
-    max-width: 250px;
+    max-width: 80%;
     padding: 5px 10px;
     border-radius: 5px;
     color: #E9EDEF;

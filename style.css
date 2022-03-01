@@ -22,8 +22,14 @@ ul {
 }
 
 /* SCROLL-BAR STYLE */
-::-webkit-scrollbar {width: 8px;}
-::-webkit-scrollbar-thumb {border-radius: 5px; background: #384045;}
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background: #384045;
+}
 
 /* **************************************************************************************************** */
 
@@ -310,6 +316,9 @@ button {
     padding: 5px 10px;
     border-radius: 5px;
     color: #E9EDEF;
+    filter: drop-shadow(2px 2px 2px #00000066);
+    user-select: text;
+    position: relative;
 }
 
 .received {
@@ -320,6 +329,28 @@ button {
 .sent {
     align-self: flex-end;
     background: #015D4B;
+}
+
+.triangle-received {
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: 0;
+    left: -8px;
+    border-style: solid;
+    border-width: 0 12px 12px 0;
+    border-color: transparent #202D33 transparent transparent;
+}
+
+.triangle-sent {
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: 0;
+    right: -8px;
+    border-style: solid;
+    border-width: 12px 12px 0 0;
+    border-color: #015D4B transparent transparent transparent;
 }
 
 .main-toolbar {

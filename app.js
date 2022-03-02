@@ -2,7 +2,7 @@
 console.log('Welcome to the new version of WhatsApp Web!');
 
 // COLLEGAMENTO VUEJS
-const app = new Vue ({
+const app = new Vue({
     el: '#root',
     data: {
         isActive1: false,
@@ -41,7 +41,7 @@ const app = new Vue ({
             },
             {
                 name: 'Fabio',
-                accesso: 'oggi alle  16:47',
+                accesso: 'online',
                 avatar: 'img/02.jpg',
                 visible: true,
                 messages: [
@@ -66,7 +66,7 @@ const app = new Vue ({
             },
             {
                 name: 'Samuele',
-                accesso: 'ieri alle 23:38',
+                accesso: 'online',
                 avatar: 'img/03.jpg',
                 visible: true,
                 messages: [
@@ -111,59 +111,61 @@ const app = new Vue ({
     },
     methods: {
 
-        closeWindow: function() {
+        closeWindow: function () {
             this.isClosed = true;
         },
 
-        minimizeWindow: function() {
+        minimizeWindow: function () {
             this.isMinimized = !this.isMinimized;
         },
 
-        expandWindow: function() {
+        expandWindow: function () {
             this.isExpanded = !this.isExpanded;
         },
 
-        menuToggler1: function() {
+        menuToggler1: function () {
             this.isActive1 = !this.isActive1;
         },
 
-        menuToggler2: function() {
+        menuToggler2: function () {
             this.isActive2 = !this.isActive2;
         },
 
-        openApp: function() {
+        openApp: function () {
             this.isClosed = false;
         },
 
-        selectChat: function(i) {
+        selectChat: function (i) {
             this.currentChat = i;
         },
 
-        sendMessage: function() {
+        sendMessage: function () {
 
             // GENERATORE ORE
-            const date = new Date ();
+            const date = new Date();
 
-            const message = {
-                date: `${date.getHours()}:${date.getMinutes()}`,
-                text: this.newMessage,
-                status: 'sent',
-                seen: 'unread',
+            if (this.newMessage !== '') {
+                const message = {
+                    date: `${date.getHours()}:${date.getMinutes()}`,
+                    text: this.newMessage,
+                    status: 'sent',
+                    seen: 'unread',
+                };
+
+                this.contacts[this.currentChat].messages.push(message);
+
+                // SVUOTA L'INPUT DI TESTO DELLA CHAT
+                this.newMessage = '';
+
+                // TIMER RISPOSTA AUTOMATICA
+                setTimeout(this.autoReply, 3000);
             };
-
-            this.contacts[this.currentChat].messages.push(message);
-
-            // SVUOTA L'INPUT DI TESTO DELLA CHAT
-            this.newMessage = '';
-
-            // TIMER RISPOSTA AUTOMATICA
-            setTimeout(this.autoReply, 3000);
         },
-        
-        autoReply: function() {
+
+        autoReply: function () {
 
             // GENERATORE ORE
-            const date = new Date ();
+            const date = new Date();
 
             const message = {
                 date: `${date.getHours()}:${date.getMinutes()}`,
@@ -172,7 +174,7 @@ const app = new Vue ({
             };
 
             this.contacts[this.currentChat].messages.push(message);
-        }
+        },
     },
 });
 

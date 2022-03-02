@@ -128,7 +128,7 @@
                             <ul>
                                 <li>Info contatto</li>
                                 <li>Seleziona messaggi</li>
-                                <li>Attiva notifichd</li>
+                                <li>Attiva notifiche</li>
                                 <li>Elimina messaggi</li>
                                 <li>Elimina chat</li>
                             </ul>
@@ -168,7 +168,10 @@
                         <i title="Emoji e simboli" class="fa-regular fa-face-smile"></i>
                         <i title="Allega file" class="fas fa-paperclip"></i>
                     </div>
-                    <input class="chat-input" type="text" placeholder="Scrivi un messaggio">
+                    <input
+                    @keyup.enter="sendMessage"
+                    v-model="newMessage"
+                    class="chat-input" type="text" placeholder="Scrivi un messaggio">
                     <div class="vocal-box">
                         <i title="Registra messaggio vocale" class="fa-solid fa-microphone"></i>
                     </div>

@@ -12,6 +12,7 @@ const app = new Vue ({
         isExpanded: false,
         isOpened: false,
         currentChat: '-1',
+        newMessage: '',
         contacts: [
             {
                 name: 'Michele',
@@ -136,6 +137,18 @@ const app = new Vue ({
 
         selectChat: function(i) {
             this.currentChat = i;
+        },
+
+        sendMessage: function() {
+
+            const message = {
+                date: '',
+                text: this.newMessage,
+                status: 'sent',
+                seen: 'unread',
+            }
+
+            this.contacts[this.currentChat].messages.push(message);
         },
     },
 });

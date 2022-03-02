@@ -68,7 +68,7 @@
                         <i title="Nuovo messaggio" class="fa-solid fa-pen-to-square"></i>
                         <i title="Mostra altre opzioni" @click="menuToggler1" class="fa-solid fa-chevron-down"></i>
                         <!-- DROPDOWN MENU -->
-                        <div class="dropdown dropdown-sidebar" :class="{active: isActive1}">
+                        <div class="dropdown dropdown-sidebar" :class="{dropdown_active: isActive1}">
                             <ul>
                                 <li>Nuovo messaggio</li>
                                 <li>Archiviate</li>
@@ -88,6 +88,7 @@
                     <!-- CONTACT -->
                     <div
                     @click="selectChat(index)"
+                    :class="index == chat ? 'contact-active' : ''"
                     v-for="(element, index) in contacts"
                     class="contact">
                         <div class="img-wrapper">
@@ -123,7 +124,7 @@
                         <i title="Cerca nella chat" class="fa-solid fa-magnifying-glass" id="search"></i>
                         <i title="Mostra altre opzioni" class="fa-solid fa-chevron-down" @click="menuToggler2" id="arrow-down"></i>
                         <!-- DROPDOWN MENU -->
-                        <div class="dropdown dropdown-main" :class="{active: isActive2}">
+                        <div class="dropdown dropdown-main" :class="{dropdown_active: isActive2}">
                             <ul>
                                 <li>Info contatto</li>
                                 <li>Seleziona messaggi</li>

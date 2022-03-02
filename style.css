@@ -184,7 +184,7 @@ button {
 .dropdown {
     display: none;
     width: 180px;
-    font-size: 15px;
+    font-size: 13px;
     color: #AEBAC1;
     background: #233238;
 }
@@ -210,7 +210,7 @@ button {
     background: #182329;
 }
 
-.active {
+.dropdown_active {
     display: block;
 }
 
@@ -274,6 +274,10 @@ button {
 }
 
 .contact:hover {
+    background: #2A3A42;
+}
+
+.contact-active {
     background: #2A3A42;
 }
 
@@ -394,7 +398,7 @@ button {
     padding: 5px 10px;
     border-radius: 5px;
     color: #E9EDEF;
-    filter: drop-shadow(2px 2px 2px #00000066);
+    filter: drop-shadow(2px 2px 2px #0000004d);
     user-select: text;
     position: relative;
 }
@@ -404,6 +408,7 @@ button {
     text-align: end;
     font-size: 8px;
     font-weight: 300;
+    user-select: none;
     color: #8697A0;
 }
 

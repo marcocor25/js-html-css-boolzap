@@ -141,15 +141,38 @@ const app = new Vue ({
 
         sendMessage: function() {
 
+            // GENERATORE ORE
+            const date = new Date ();
+
             const message = {
-                date: '',
+                date: `${date.getHours()}:${date.getMinutes()}`,
                 text: this.newMessage,
                 status: 'sent',
                 seen: 'unread',
-            }
+            };
 
             this.contacts[this.currentChat].messages.push(message);
+
+            // SVUOTA L'INPUT DI TESTO DELLA CHAT
+            this.newMessage = '';
+
+            // TIMER RISPOSTA AUTOMATICA
+            setTimeout(this.autoReply, 3000);
         },
+        
+        autoReply: function() {
+
+            // GENERATORE ORE
+            const date = new Date ();
+
+            const message = {
+                date: `${date.getHours()}:${date.getMinutes()}`,
+                text: 'Ok',
+                status: 'received',
+            };
+
+            this.contacts[this.currentChat].messages.push(message);
+        }
     },
 });
 

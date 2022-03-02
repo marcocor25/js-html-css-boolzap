@@ -5,11 +5,11 @@ console.log('Welcome to the new version of WhatsApp Web!');
 const app = new Vue ({
     el: '#root',
     data: {
+        isActive1: false,
+        isActive2: false,
         isClosed: false,
         isMinimized: false,
         isExpanded: false,
-        isActive1: false,
-        isActive2: false,
         isOpened: false,
         chat: '',
         contacts: [
@@ -17,94 +17,96 @@ const app = new Vue ({
                 name: 'Michele',
                 accesso: 'online',
                 avatar: 'img/01.jpg',
-                preview: 'Stasera andiamo al sushi? 😁🍣',
                 visible: true,
                 messages: [
                     {
-                        date: '10/01/2020 15:30:55',
+                        date: '15:30',
                         text: 'Hai portato a spasso il cane?',
-                        status: 'sent'
+                        status: 'sent',
+                        seen: 'read',
                     },
                     {
-                        date: '10/01/2020 15:50:00',
+                        date: '15:50',
                         text: 'Ricordati di dargli da mangiare',
-                        status: 'sent'
+                        status: 'sent',
+                        seen: 'read',
                     },
                     {
-                        date: '10/01/2020 16:15:22',
+                        date: '16:15',
                         text: 'Tutto fatto!',
-                        status: 'received'
-                    }
+                        status: 'received',
+                    },
                 ],
             },
             {
                 name: 'Fabio',
                 accesso: 'oggi alle  16:47',
                 avatar: 'img/02.jpg',
-                preview: `L'hai visto Peaky Blinders 6??`,
                 visible: true,
                 messages: [
                     {
-                        date: '20/03/2020 16:30:00',
+                        date: '16:30',
                         text: 'Ciao come stai?',
-                        status: 'sent'
+                        status: 'sent',
+                        seen: 'read',
                     },
                     {
-                        date: '20/03/2020 16:30:55',
+                        date: '16:30',
                         text: 'Bene grazie! Stasera ci vediamo?',
-                        status: 'received'
+                        status: 'received',
                     },
                     {
-                        date: '20/03/2020 16:35:00',
+                        date: '16:35',
                         text: 'Mi piacerebbe ma devo andare a fare la spesa.',
-                        status: 'sent'
-                    }
+                        status: 'sent',
+                        seen: 'unread',
+                    },
                 ],
             },
             {
                 name: 'Samuele',
                 accesso: 'ieri alle 23:38',
                 avatar: 'img/03.jpg',
-                preview: 'Va bene, ci vediamo più tardi dalla nonna. Non ti dimenticare il pane!',
                 visible: true,
                 messages: [
                     {
-                        date: '28/03/2020 10:10:40',
+                        date: '10:10',
                         text: 'La Marianna va in campagna',
-                        status: 'received'
+                        status: 'received',
                     },
                     {
-                        date: '28/03/2020 10:20:10',
+                        date: '10:20',
                         text: 'Sicuro di non aver sbagliato chat?',
-                        status: 'sent'
+                        status: 'sent',
+                        seen: 'read',
                     },
                     {
-                        date: '28/03/2020 16:15:22',
+                        date: '16:15',
                         text: 'Ah scusa!',
-                        status: 'received'
-                    }
+                        status: 'received',
+                    },
                 ],
             },
             {
                 name: 'Luisa',
                 accesso: 'online',
                 avatar: 'img/04.jpg',
-                preview: 'Oggi non posso, sono di nuovo raffreddata.... 🤧',
                 visible: true,
                 messages: [
                     {
-                        date: '10/01/2020 15:30:55',
+                        date: '15:30',
                         text: 'Lo sai che ha aperto una nuova pizzeria?',
-                        status: 'sent'
+                        status: 'sent',
+                        seen: 'read',
                     },
                     {
-                        date: '10/01/2020 15:50:00',
+                        date: '15:50',
                         text: 'Si, ma preferirei andare al cinema',
-                        status: 'received'
-                    }
+                        status: 'received',
+                    },
                 ],
             },
-        ]
+        ],
     },
     methods: {
 

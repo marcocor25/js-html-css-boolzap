@@ -146,6 +146,15 @@
                     class="message">
                         <!-- TEXT -->
                         {{element.text}}
+                        <!-- DATE -->
+                        <p>{{element.date}}
+                            <i
+                            :class="element.seen == 'read' ? 'double-tick' : ''"
+                            class="fa-solid fa-check-double"></i>
+                            <i
+                            :class="element.seen == 'unread' ? 'tick' : ''"
+                            class="fa-solid fa-check"></i>
+                        </p>
                         <!-- TRIANGLE -->
                         <div
                         :class="element.status == 'sent' ? 'triangle-sent' : 'triangle-received'">

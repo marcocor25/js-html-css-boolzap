@@ -389,7 +389,7 @@ button {
 }
 
 .message {
-    min-width: 80px;
+    min-width: 90px;
     max-width: 80%;
     padding: 5px 10px;
     border-radius: 5px;
@@ -397,6 +397,19 @@ button {
     filter: drop-shadow(2px 2px 2px #00000066);
     user-select: text;
     position: relative;
+}
+
+.message p {
+    padding-top: 4px;
+    text-align: end;
+    font-size: 8px;
+    font-weight: 300;
+    color: #8697A0;
+}
+
+.message i {
+    font-size: 10px;
+    padding-left: 2px;
 }
 
 .sent {
@@ -407,6 +420,23 @@ button {
 .received {
     align-self: flex-start;
     background: #202D33;
+}
+
+.fa-check {
+    display: none;
+}
+
+.tick {
+    display: inline;
+}
+
+.fa-check-double {
+    display: none;
+}
+
+.double-tick {
+    display: inline;
+    color: #5EB4F9;
 }
 
 .triangle-received {

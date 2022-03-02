@@ -88,7 +88,7 @@
                     <!-- CONTACT -->
                     <div
                     @click="selectChat(index)"
-                    :class="index == chat ? 'contact-active' : ''"
+                    :class="index == currentChat ? 'contact-active' : ''"
                     v-for="(element, index) in contacts"
                     class="contact">
                         <div class="img-wrapper">
@@ -103,7 +103,7 @@
             </div>
             <!-- MAIN SECTION -->
             <div
-            :class="index === chat ? 'main-active' : ''"
+            :class="index === currentChat ? 'main-active' : ''"
             v-for="(element, index) in contacts"
             class="main">
                 <!-- MAIN NAV -->
@@ -138,7 +138,7 @@
                 <!-- CHAT SECTION -->
                 <div
                 v-for="(element, index) in contacts"
-                :class="index === chat ? 'chat-active' : ''"
+                :class="index === currentChat ? 'chat-active' : ''"
                 class="chat-section">
                     <!-- MESSAGE -->
                     <div

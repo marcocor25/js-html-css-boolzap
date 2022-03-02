@@ -11,7 +11,7 @@ const app = new Vue ({
         isMinimized: false,
         isExpanded: false,
         isOpened: false,
-        chat: '',
+        currentChat: '-1',
         contacts: [
             {
                 name: 'Michele',
@@ -135,7 +135,7 @@ const app = new Vue ({
         },
 
         selectChat: function(i) {
-            this.chat = i;
+            this.currentChat = i;
         },
     },
 });

@@ -95,8 +95,11 @@
                             <img :src="element.avatar" :alt="element.name">
                         </div>
                         <div class="info-wrapper">
-                            <h3>{{element.name}}</h3>
-                            <p>{{element.messages[element.messages.length - 1].text}}</p>
+                            <div class="name-time">
+                                <h3>{{element.name}}</h3>
+                                <p class="contact-time">{{element.messages[element.messages.length - 1].date}}</p>
+                            </div>
+                            <p class="contact-message">{{element.messages[element.messages.length - 1].text}}</p>
                         </div>
                     </div>
                 </div>

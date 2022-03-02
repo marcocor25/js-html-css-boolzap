@@ -95,10 +95,6 @@ ul {
     background: #111C22;
 }
 
-.main {
-    flex-grow: 1;
-}
-
 .sidebar-nav {
     min-height: 60px;
     display: flex;
@@ -265,7 +261,8 @@ button {
 
 .contact {
     width: 100%;
-    min-height: 80px;
+    min-height: 70px;
+    padding: 10px 0;
     display: flex;
     align-items: center;
     border-bottom: 1px solid #222E34;
@@ -291,18 +288,35 @@ button {
     border-radius: 50%;
 }
 
-.info-wrapper h3 {
-    padding: 6px 0;
+.info-wrapper {
+    width: 100%;
 }
 
 .info-wrapper p {
-    padding-bottom: 6px;
-    padding-right: 20px;
     font-weight: 300;
     color: #8697A0;
 }
 
+.name-time {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 6px 0;
+}
+
+.contact-time {
+    padding: 0 10px;
+    font-size: 12px;
+}
+
+.contact-message {
+    max-height: 35px;
+    padding-right: 20px;
+    overflow: hidden;
+}
+
 .main {
+    flex-grow: 1;
     display: none;
     flex-direction: column;
 }
@@ -310,7 +324,6 @@ button {
 .main-active {
     display: flex;
 }
-
 
 .main-nav {
     min-height: 60px;

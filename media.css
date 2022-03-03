@@ -1,24 +1,24 @@
 @media all and (max-width: 1000px) {
-    #pipe {
-        display: none;
-    }
+  #pipe {
+    display: none;
+  }
 
-    #search {
-        display: none;
-    }
+  #search {
+    display: none;
+  }
 
-    #arrow-down {
-        display: none;
-    }
+  #arrow-down {
+    display: none;
+  }
 }
 
 @media all and (max-width: 880px) {
-    .sidebar {
-        flex-grow: 1;
-        border-right: none;
-    }
+  .sidebar {
+    flex-grow: 1;
+    border-right: none;
+  }
 
-    .main {
-        display: none;
-    }
+  .main {
+    display: none;
+  }
 }

@@ -1,191 +1,246 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="media.css">
-    <link rel="icon" href="img/icon.png">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.7/dayjs.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="media.css" />
+    <link rel="icon" href="img/icon.png" />
     <title>WhatsApp</title>
-</head>
-<body>
-
+  </head>
+  <body>
     <!-- APP ROOT FOR VUEJS -->
     <div id="root">
-        <!-- DESKTOP ICON -->
-        <div
-        @dblclick="openApp"
-        class="whatsapp-box">
-            <div class="w-icon">
-                <img src="img/icon.png" alt="">
-            </div>
-            <p>WhatsApp Desktop</p>
+      <!-- DESKTOP ICON -->
+      <div @dblclick="openApp" class="whatsapp-box">
+        <div class="w-icon">
+          <img src="img/icon.png" alt="" />
         </div>
-        <!-- APP WINDOW -->
-        <div class="app-window"
+        <p>WhatsApp Desktop</p>
+      </div>
+      <!-- APP WINDOW -->
+      <div
+        class="app-window"
         :class="[
         {opened: isOpened},
         {closed: isClosed},
         {minimized: isMinimized}, 
-        {expanded: isExpanded}]">
-            <!-- SIDEBAR -->
-            <div class="sidebar">
-                <!-- SIDEBAR NAV -->
-                <div class="sidebar-nav">
-                    <!-- WINDOW BUTTONS -->
-                    <div class="window-buttons">
-                        <!-- CLOSE -->
-                        <button
-                        @click="closeWindow"
-                        title="Chiudi la finestra"
-                        id="close">
-                            <i class="fa-solid fa-x"></i>
-                        </button>
-                        <!-- MINIMIZE -->
-                        <button
-                        @click="minimizeWindow"
-                        title="Minimizza la finestra"
-                        id="minimize">
-                            <i class="fa-solid fa-minus"></i>
-                        </button>
-                        <!-- EXPAND -->
-                        <button
-                        @click="expandWindow"
-                        title="Espandi la finestra"
-                        id="expand">
-                            <i class="fa-solid fa-up-right-and-down-left-from-center"></i>
-                        </button>
-                    </div>
-                    <!-- PROFILE TOOLS -->
-                    <div class="profile-tools">
-                        <div title="Visualizza profilo" class="avatar">
-                            <img src="img/avatar.jpeg">
-                        </div>
-                        <i title="Aggiornamento stati" class="fa-solid fa-circle-notch"></i>
-                        <i title="Nuovo messaggio" class="fa-solid fa-pen-to-square"></i>
-                        <i title="Mostra altre opzioni" @click="menuToggler1" class="fa-solid fa-chevron-down"></i>
-                        <!-- DROPDOWN MENU -->
-                        <div class="dropdown dropdown-sidebar" :class="{dropdown_active: isActive1}">
-                            <ul>
-                                <li>Nuovo messaggio</li>
-                                <li>Archiviate</li>
-                                <li>Messaggi importanti</li>
-                                <li>Impostazioni</li>
-                                <li>Disconnetti</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <!-- SEARCH-BAR -->
-                <div class="search-bar">
-                    <input type="search" class="input-search" placeholder="&#xf002; Cerca o inizia una nuova chat">
-                </div>
-                <!-- CONTACT WRAPPER -->
-                <div class="contact-wrapper">
-                    <!-- CONTACT -->
-                    <div
-                    @click="selectChat(index)"
-                    :class="index == currentChat ? 'contact-active' : ''"
-                    v-for="(element, index) in contacts"
-                    class="contact">
-                        <div class="img-wrapper">
-                            <img :src="element.avatar" :alt="element.name">
-                        </div>
-                        <div class="info-wrapper">
-                            <div class="name-time">
-                                <h3>{{element.name}}</h3>
-                                <p class="contact-time">{{element.messages[element.messages.length - 1].date}}</p>
-                            </div>
-                            <p class="contact-message">{{element.messages[element.messages.length - 1].text}}</p>
-                        </div>
-                    </div>
-                </div>
+        {expanded: isExpanded}]"
+      >
+        <!-- SIDEBAR -->
+        <div class="sidebar">
+          <!-- SIDEBAR NAV -->
+          <div class="sidebar-nav">
+            <!-- WINDOW BUTTONS -->
+            <div class="window-buttons">
+              <!-- CLOSE -->
+              <button
+                @click="closeWindow"
+                title="Chiudi la finestra"
+                id="close"
+              >
+                <i class="fa-solid fa-x"></i>
+              </button>
+              <!-- MINIMIZE -->
+              <button
+                @click="minimizeWindow"
+                title="Minimizza la finestra"
+                id="minimize"
+              >
+                <i class="fa-solid fa-minus"></i>
+              </button>
+              <!-- EXPAND -->
+              <button
+                @click="expandWindow"
+                title="Espandi la finestra"
+                id="expand"
+              >
+                <i class="fa-solid fa-up-right-and-down-left-from-center"></i>
+              </button>
             </div>
-            <!-- MAIN SECTION -->
+            <!-- PROFILE TOOLS -->
+            <div class="profile-tools">
+              <div title="Visualizza profilo" class="avatar">
+                <img src="img/avatar.jpeg" />
+              </div>
+              <i
+                title="Aggiornamento stati"
+                class="fa-solid fa-circle-notch"
+              ></i>
+              <i title="Nuovo messaggio" class="fa-solid fa-pen-to-square"></i>
+              <i
+                title="Mostra altre opzioni"
+                @click="menuToggler1"
+                class="fa-solid fa-chevron-down"
+              ></i>
+              <!-- DROPDOWN MENU -->
+              <div
+                class="dropdown dropdown-sidebar"
+                :class="{dropdown_active: isActive1}"
+              >
+                <ul>
+                  <li>Nuovo messaggio</li>
+                  <li>Archiviate</li>
+                  <li>Messaggi importanti</li>
+                  <li>Impostazioni</li>
+                  <li>Disconnetti</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- SEARCH-BAR -->
+          <div class="search-bar">
+            <input
+              type="search"
+              class="input-search"
+              placeholder="&#xf002; Cerca o inizia una nuova chat"
+            />
+          </div>
+          <!-- CONTACT WRAPPER -->
+          <div class="contact-wrapper">
+            <!-- CONTACT -->
             <div
-            :class="index === currentChat ? 'main-active' : ''"
-            v-for="(element, index) in contacts"
-            class="main">
-                <!-- MAIN NAV -->
-                <div class="main-nav">
-                    <div class="main-nav-profile">
-                        <div class="main-profile-image">
-                            <img title="Visualizza profilo" :src="element.avatar" alt="element.name">
-                        </div>
-                        <div class="main-profile-info">
-                            <h3>{{element.name}}</h3>
-                            <p>{{element.accesso}}</p>
-                        </div>
-                    </div>
-                    <div class="main-nav-tools">
-                        <i title="Avvio videochiamata" class="fa-solid fa-video"></i>
-                        <i title="Avvia chiamata vocale" class="fa-solid fa-phone"></i>
-                        <i class="fa-solid fa-minus" id="pipe"></i>
-                        <i title="Cerca nella chat" class="fa-solid fa-magnifying-glass" id="search"></i>
-                        <i title="Mostra altre opzioni" class="fa-solid fa-chevron-down" @click="menuToggler2" id="arrow-down"></i>
-                        <!-- DROPDOWN MENU -->
-                        <div class="dropdown dropdown-main" :class="{dropdown_active: isActive2}">
-                            <ul>
-                                <li>Info contatto</li>
-                                <li>Seleziona messaggi</li>
-                                <li>Attiva notifiche</li>
-                                <li>Elimina messaggi</li>
-                                <li>Elimina chat</li>
-                            </ul>
-                        </div>
-                    </div>
+              @click="selectChat(index)"
+              :class="index == currentChat ? 'contact-active' : ''"
+              v-for="(element, index) in contacts"
+              class="contact"
+            >
+              <div class="img-wrapper">
+                <img :src="element.avatar" :alt="element.name" />
+              </div>
+              <div class="info-wrapper">
+                <div class="name-time">
+                  <h3>{{element.name}}</h3>
+                  <p class="contact-time">
+                    {{element.messages[element.messages.length - 1].date}}
+                  </p>
                 </div>
-                <!-- CHAT SECTION -->
-                <div
-                v-for="(element, index) in contacts"
-                :class="index === currentChat ? 'chat-active' : ''"
-                class="chat-section">
-                    <!-- MESSAGE -->
-                    <div
-                    v-for="element in element.messages"
-                    :class="element.status == 'sent' ? 'sent' : 'received'"
-                    class="message">
-                        <!-- TEXT -->
-                        {{element.text}}
-                        <!-- DATE -->
-                        <p>
-                            {{element.date}}
-                            <i
-                            :class="element.seen == 'read' ? 'double-tick' : ''"
-                            class="fa-solid fa-check-double"></i>
-                            <i
-                            :class="element.seen == 'unread' ? 'tick' : ''"
-                            class="fa-solid fa-check"></i>
-                        </p>
-                        <!-- TRIANGLE -->
-                        <div
-                        :class="element.status == 'sent' ? 'triangle-sent' : 'triangle-received'">
-                        </div>
-                    </div>
-                </div>
-                <!-- MAIN TOOLBAR -->
-                <div class="main-toolbar">
-                    <div class="emoji-box">
-                        <i title="Emoji e simboli" class="fa-regular fa-face-smile"></i>
-                        <i title="Allega file" class="fas fa-paperclip"></i>
-                    </div>
-                    <input
-                    @keyup.enter="sendMessage"
-                    v-model="newMessage"
-                    class="chat-input" type="text" placeholder="Scrivi un messaggio">
-                    <div class="vocal-box">
-                        <i title="Registra messaggio vocale" class="fa-solid fa-microphone"></i>
-                    </div>
-                </div>
+                <p class="contact-message">
+                  {{element.messages[element.messages.length - 1].text}}
+                </p>
+              </div>
             </div>
+          </div>
         </div>
+        <!-- MAIN SECTION -->
+        <div
+          :class="index === currentChat ? 'main-active' : ''"
+          v-for="(element, index) in contacts"
+          class="main"
+          id="chat"
+        >
+          <!-- MAIN NAV -->
+          <div class="main-nav">
+            <div class="main-nav-profile">
+              <div class="main-profile-image">
+                <img
+                  title="Visualizza profilo"
+                  :src="element.avatar"
+                  alt="element.name"
+                />
+              </div>
+              <div class="main-profile-info">
+                <h3>{{element.name}}</h3>
+                <p>{{element.accesso}}</p>
+              </div>
+            </div>
+            <div class="main-nav-tools">
+              <i title="Avvio videochiamata" class="fa-solid fa-video"></i>
+              <i title="Avvia chiamata vocale" class="fa-solid fa-phone"></i>
+              <i class="fa-solid fa-minus" id="pipe"></i>
+              <i
+                title="Cerca nella chat"
+                class="fa-solid fa-magnifying-glass"
+                id="search"
+              ></i>
+              <i
+                title="Mostra altre opzioni"
+                class="fa-solid fa-chevron-down"
+                @click="menuToggler2"
+                id="arrow-down"
+              ></i>
+              <!-- DROPDOWN MENU -->
+              <div
+                class="dropdown dropdown-main"
+                :class="{dropdown_active: isActive2}"
+              >
+                <ul>
+                  <li>Info contatto</li>
+                  <li>Seleziona messaggi</li>
+                  <li>Attiva notifiche</li>
+                  <li>Elimina messaggi</li>
+                  <li>Elimina chat</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- CHAT SECTION -->
+          <div
+            v-for="(element, index) in contacts"
+            :class="index === currentChat ? 'chat-active' : ''"
+            class="chat-section"
+          >
+            <!-- MESSAGE -->
+            <div
+              v-for="element in element.messages"
+              :class="element.status == 'sent' ? 'sent' : 'received'"
+              class="message"
+            >
+              <!-- TEXT -->
+              {{element.text}}
+              <!-- DATE -->
+              <p>
+                {{element.date}}
+                <i
+                  :class="element.seen == 'read' ? 'double-tick' : ''"
+                  class="fa-solid fa-check-double"
+                ></i>
+                <i
+                  :class="element.seen == 'unread' ? 'tick' : ''"
+                  class="fa-solid fa-check"
+                ></i>
+              </p>
+              <!-- TRIANGLE -->
+              <div
+                :class="element.status == 'sent' ? 'triangle-sent' : 'triangle-received'"
+              ></div>
+            </div>
+          </div>
+          <!-- MAIN TOOLBAR -->
+          <div class="main-toolbar">
+            <div class="emoji-box">
+              <i title="Emoji e simboli" class="fa-regular fa-face-smile"></i>
+              <i title="Allega file" class="fas fa-paperclip"></i>
+            </div>
+            <input
+              @keyup.enter="sendMessage"
+              v-model="newMessage"
+              class="chat-input"
+              type="text"
+              placeholder="Scrivi un messaggio"
+            />
+            <div class="vocal-box">
+              <i
+                title="Registra messaggio vocale"
+                class="fa-solid fa-microphone"
+              ></i>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <!-- SCRIPT -->
     <script src="app.js"></script>
-
-</body>
+  </body>
 </html>

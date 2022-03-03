@@ -47,7 +47,7 @@ const app = new Vue({
         contacts: [
             {
                 name: "Michele",
-                accesso: "",
+                accesso: "oggi alle " + dayjs().format("HH:mm"),
                 avatar: "img/01.jpg",
                 visible: true,
                 messages: [
@@ -72,7 +72,7 @@ const app = new Vue({
             },
             {
                 name: "Fabio",
-                accesso: "",
+                accesso: "oggi alle " + dayjs().format("HH:mm"),
                 avatar: "img/02.jpg",
                 visible: true,
                 messages: [
@@ -97,7 +97,7 @@ const app = new Vue({
             },
             {
                 name: "Samuele",
-                accesso: "",
+                accesso: "oggi alle " + dayjs().format("HH:mm"),
                 avatar: "img/03.jpg",
                 visible: true,
                 messages: [
@@ -121,7 +121,7 @@ const app = new Vue({
             },
             {
                 name: "Luisa",
-                accesso: "",
+                accesso: "oggi alle " + dayjs().format("HH:mm"),
                 avatar: "img/04.jpg",
                 visible: true,
                 messages: [

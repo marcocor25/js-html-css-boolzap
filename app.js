@@ -202,7 +202,10 @@ const app = new Vue({
 
                 // TIMER RISPOSTA AUTOMATICA
                 setTimeout(this.autoReply, 7500);
-            }
+
+                this.playSent();
+
+            };
         },
 
         autoReply: function () {
@@ -227,6 +230,21 @@ const app = new Vue({
             setTimeout(() => {
                 contact.accesso = "oggi alle " + dayjs().format("HH:mm");
             }, 10000);
+
+            this.playReceived();
+
+        },
+
+        playSent: function () {
+            let audioSent = new Audio('audio/01.mp3');
+            audioSent.play()
+            audioSent.volume = 0.3;
+        },
+
+        playReceived: function () {
+            let audioReceived = new Audio('audio/02.mp3');
+            audioReceived.play()
+            audioReceived.volume = 0.3;
         },
     },
 });

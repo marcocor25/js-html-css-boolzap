@@ -13,10 +13,41 @@ const app = new Vue({
         isOpened: false,
         currentChat: '-1',
         newMessage: '',
+        randomAnswers: [
+            'Si',
+            'No.',
+            'Certamente!!',
+            'Ok',
+            'Vuoi avere sempre ragione!! 😡',
+            'Noooooooo...',
+            'Ci puoi scommettere!',
+            'La smetti!?',
+            'Ma sei scemo??',
+            'Vorrei proprio vedere!',
+            'Bastaaaaaaaaaaaaaaaa',
+            'OVVIO',
+            '😘',
+            '😂😂😂',
+            '👍',
+            'Vaff... 🤬',
+            'Quella conversazione deve aver significato molto più per te che per me.',
+            'Aspetta 10 minuti che trovo un modo gentile per rifiutare.',
+            'È successo solo perché da Facebook ho visto che sei single e da Instagram che stavi camminando in quel quartiere da sola.',
+            'Cosa ti hanno fatto i tuoi genitori per provocarti questo costante bisogno di approvazione?',
+            'Bn! Sn paxato agli smartphone 3 anni fa. Tu?',
+            'Magari quando passi la verifica di italiano.',
+            'È triste tu abbia così tanti gruppi su Whatsapp e così pochi nella vita.',
+            'Sei l’allegoria della delusione.',
+            'E come disse il netturbino: "Mi rifiuto!"',
+            'Ho saputo della tua esperienza con l`acqua lete... È vero che la particella di sodio quando ti è salita in testa gridava: "c`è nessunOOO?"',
+            'Mi è bastato vederti da lontano per capire che sei bellissimo, mi e bastato vederti da vicino per capire che da lontano non ci vedo proprio.',
+            'QUESTO MESSAGGIO È PARTITO IL 7/1/1949 DAL CENTRO SPAZIALE AREA49 (USA) ALLA RICERCA DI UNA FORMA DI VITA INTELLIGENTE. ADESSO CHE È ARRIVATO A TE LA MISSIONE È FALLITA!!!',
+            'Io scavo, tu scavi, egli scava, noi scaviamo, voi scavate, essi scavano.... non è una bella dedica ma è profonda',
+        ],
         contacts: [
             {
                 name: 'Michele',
-                accesso: 'online',
+                accesso: '',
                 avatar: 'img/01.jpg',
                 visible: true,
                 messages: [
@@ -41,7 +72,7 @@ const app = new Vue({
             },
             {
                 name: 'Fabio',
-                accesso: 'online',
+                accesso: '',
                 avatar: 'img/02.jpg',
                 visible: true,
                 messages: [
@@ -66,7 +97,7 @@ const app = new Vue({
             },
             {
                 name: 'Samuele',
-                accesso: 'online',
+                accesso: '',
                 avatar: 'img/03.jpg',
                 visible: true,
                 messages: [
@@ -90,7 +121,7 @@ const app = new Vue({
             },
             {
                 name: 'Luisa',
-                accesso: 'online',
+                accesso: '',
                 avatar: 'img/04.jpg',
                 visible: true,
                 messages: [
@@ -142,11 +173,18 @@ const app = new Vue({
         sendMessage: function () {
 
             // GENERATORE ORE
-            const date = new Date();
+            let hours = new Date();
+            currentHours = hours.getHours();
+            currentHours = ("0" + currentHours).slice(-2);
+
+            // GENERATORE MINUTI
+            let minutes = new Date();
+            currentMinutes = minutes.getMinutes();
+            currentMinutes = ("0" + currentMinutes).slice(-2);
 
             if (this.newMessage !== '') {
                 const message = {
-                    date: `${date.getHours()}:${date.getMinutes()}`,
+                    date: `${currentHours}:${currentMinutes}`,
                     text: this.newMessage,
                     status: 'sent',
                     seen: 'unread',
@@ -157,23 +195,57 @@ const app = new Vue({
                 // SVUOTA L'INPUT DI TESTO DELLA CHAT
                 this.newMessage = '';
 
+                // TIMER ONLINE
+                setTimeout(() => {
+                    this.contacts[this.currentChat].accesso = `online`
+                }, 2500);
+
+                // TIMER SEEN
+                setTimeout(() => {
+                    message.seen = 'read'
+                }, 3500);
+
+                // TIMER STA SCRIVENDO
+                setTimeout(() => {
+                    this.contacts[this.currentChat].accesso = 'sta scrivendo...'
+                }, 5000);
+
                 // TIMER RISPOSTA AUTOMATICA
-                setTimeout(this.autoReply, 3000);
+                setTimeout(this.autoReply, 7500);
             };
+
         },
 
         autoReply: function () {
 
             // GENERATORE ORE
-            const date = new Date();
+            let hours = new Date();
+            currentHours = hours.getHours();
+            currentHours = ("0" + currentHours).slice(-2);
+
+            // GENERATORE MINUTI
+            let minutes = new Date();
+            currentMinutes = minutes.getMinutes();
+            currentMinutes = ("0" + currentMinutes).slice(-2);
 
             const message = {
-                date: `${date.getHours()}:${date.getMinutes()}`,
-                text: 'Ok',
+                date: `${currentHours}:${currentMinutes}`,
+                text: this.randomAnswers[Math.floor(Math.random() * this.randomAnswers.length)],
                 status: 'received',
             };
 
             this.contacts[this.currentChat].messages.push(message);
+
+            // TIMER ONLINE
+            setTimeout(() => {
+                this.contacts[this.currentChat].accesso = `online`
+            }, 0);
+
+            // TIMER ULTIMO ACCESSO
+            setTimeout(() => {
+                this.contacts[this.currentChat].accesso = `oggi alle ${currentHours}:${currentMinutes}`;
+            }, 10000);
+
         },
     },
 });

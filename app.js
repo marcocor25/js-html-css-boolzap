@@ -185,6 +185,12 @@ const app = new Vue({
                 // SVUOTA L'INPUT DI TESTO DELLA CHAT
                 this.newMessage = "";
 
+                // MESSAGGIO SEMPRE IN PRIMO PIANO
+                setTimeout(() => {
+                    const container = this.$el.querySelector(".chat-section");
+                    container.scrollTop = container.scrollHeight;
+                }, 0);
+
                 // TIMER ONLINE
                 setTimeout(() => {
                     contact.accesso = `online`;
@@ -220,6 +226,12 @@ const app = new Vue({
             };
 
             contact.messages.push(message);
+
+            // MESSAGGIO SEMPRE IN PRIMO PIANO
+            setTimeout(() => {
+                const container = this.$el.querySelector(".chat-section");
+                container.scrollTop = container.scrollHeight;
+            }, 0);
 
             // TIMER ONLINE
             setTimeout(() => {

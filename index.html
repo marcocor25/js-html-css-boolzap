@@ -103,6 +103,8 @@
             <input
               type="search"
               class="input-search"
+              @keyup="contactFilter"
+              v-model="inputSearch"
               placeholder="&#xf002; Cerca o inizia una nuova chat"
             />
           </div>
@@ -113,6 +115,7 @@
               @click="selectChat(index)"
               :class="index == currentChat ? 'contact-active' : ''"
               v-for="(element, index) in contacts"
+              v-if="element.visible"
               class="contact"
             >
               <div class="img-wrapper">

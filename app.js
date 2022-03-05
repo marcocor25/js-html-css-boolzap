@@ -1,6 +1,3 @@
-// TEST
-console.log("Welcome to the new version of WhatsApp Web!");
-
 // COLLEGAMENTO VUEJS
 const app = new Vue({
     el: "#root",
@@ -13,6 +10,7 @@ const app = new Vue({
         isOpened: false,
         currentChat: "-1",
         newMessage: "",
+        inputSearch: "",
         randomAnswers: [
             "Si",
             "No.",
@@ -169,6 +167,16 @@ const app = new Vue({
             this.currentChat = i;
         },
 
+        contactFilter: function () {
+            this.contacts.forEach((el) => {
+                if (el.name.toLowerCase().includes(this.inputSearch)) {
+                    el.visible = true;
+                } else {
+                    el.visible = false;
+                }
+            });
+        },
+
         sendMessage: function () {
             if (this.newMessage !== "") {
                 const contact = this.contacts[this.currentChat];
@@ -210,8 +218,7 @@ const app = new Vue({
                 setTimeout(this.autoReply, 7500);
 
                 this.playSent();
-
-            };
+            }
         },
 
         autoReply: function () {
@@ -244,18 +251,17 @@ const app = new Vue({
             }, 10000);
 
             this.playReceived();
-
         },
 
         playSent: function () {
-            let audioSent = new Audio('audio/01.mp3');
-            audioSent.play()
+            let audioSent = new Audio("audio/01.mp3");
+            audioSent.play();
             audioSent.volume = 0.3;
         },
 
         playReceived: function () {
-            let audioReceived = new Audio('audio/02.mp3');
-            audioReceived.play()
+            let audioReceived = new Audio("audio/02.mp3");
+            audioReceived.play();
             audioReceived.volume = 0.3;
         },
     },
